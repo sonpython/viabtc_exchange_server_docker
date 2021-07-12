@@ -16,6 +16,7 @@ sed -i "$c" makefile
 sed -i "$l" makefile
 make
 
+echo "start building marketprice ======="
 cd  /src/viabtc/marketprice/
 make
 

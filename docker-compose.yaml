@@ -1,4 +1,4 @@
-version: '2'
+version: '2.1'
 
 services:
   btc:
@@ -60,6 +60,8 @@ services:
     build: ./db/
     ports:
       - "13306:3306"
+    volumes:
+      - mysql-datavolume:/var/lib/mysql
 
   zookeeper:
     container_name: btc-zookeeper
@@ -82,3 +84,6 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     depends_on:
       - zookeeper
+
+volumes:
+  mysql-datavolume:
